@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="../build/ols-termpopup.js"></script>
+  <link rel="stylesheet" href="../css/ols_popup.css" type="text/css" media="screen" />
+
+</head>
+
+<body>
+
+<div>
+  <h2>OLS terminfo popup</h2>
+  <h4>Example 1:Closing popup via close button</h4>
+  The popup is started with minimal options, so all available information is shown.
+</div>
+<br><br>
+Mouseover the term to open popup, close it via right corner: <div id="term2" class="popup"><strong><p>mouseover efo disposition</p></strong></div>
+<br><br>
+Click on the term to open popup, close it via right corner: <div id="term1" class="popup"><strong><p>diabets</p></strong></div>
+
+
+<script>
+$(document).ready(function() {
+
+  var app = require("ols-termpopup");
+  var instance = new app();
+  instance.initialize({})
+
+  //Sets a Listener for a specific id and which term should be displayed
+  instance.setListener("term1","click","efo","http://www.ebi.ac.uk/efo/EFO_0000400")
+  //Sets closing methode (onClick) for term1
+  instance.closePopUpOnClick("term1")
+
+  instance.setListener("term2","mouseover","efo","http://www.ifomis.org/bfo/1.1/snap%23Disposition")
+  //Sets closing methode (onClick) for term2
+  instance.closePopUpOnClick("term2")
+
+});
+
+</script>
+</body>
+</html>

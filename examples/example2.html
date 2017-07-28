@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="../build/ols-termpopup.js"></script>
+  <link rel="stylesheet" href="../css/ols_popup.css" type="text/css" media="screen" />
+
+</head>
+
+<body>
+<div>
+  <h2>OLS terminfo popup</h2>
+  <h4>Example 2: demonstrates closing the popup via 'mouseout' event</h4>
+The popup is started with the option not to show the 'Go to ols Button' or the label(title).
+</div>
+
+<br><br>
+Mouse over to activate, mouse out to disapear: <div id="variable1" class="popup"><strong><p>mouseover GO_0098743 in CL</p></strong></div>
+<br><br>
+Click to activate, mouse out to disapear <div id="variable2" class="popup"><strong><p>mouseover GO_0009987 in GO</p></strong></div>
+
+
+
+<script>
+$(document).ready(function() {
+
+  var app = require("ols-termpopup");
+  var instance = new app();
+  instance.initialize({display: {"showTitle" : false, "button_go_to_ols" : false}})
+
+  //Sets a Listener for a specific id and which term should be displayed
+  instance.setListener("variable1","mouseover","go","http://purl.obolibrary.org/obo/GO_0098743")
+  //Sets closing methode (onClick) for term2
+  instance.closePopUpOnMouseOut("variable1")
+
+  //Sets a Listener for a specific id and which term should be displayed
+  instance.setListener("variable2", "click","go","http://purl.obolibrary.org/obo/GO_0009987")
+    //Sets closing methode (onClick) for term2
+  instance.closePopUpOnMouseOut("variable2")
+
+
+});
+
+</script>
+</body>
+</html>

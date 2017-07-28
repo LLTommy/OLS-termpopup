@@ -1,0 +1,110 @@
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: auto;
+}
+
+/* The actual popup */
+.popup .popuptext {
+    visibility: hidden;
+    width: 800px;
+    background-color: #f3f3f3;
+    color: #000000;
+    text-align: left;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 70%;
+    left: 50%;
+    /*margin-left: 0px;*/
+    margin-left: 0px;
+    cursor: default;
+}
+/* The actual popup
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+*/
+
+/* Popup arrow*/
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 3%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #f3f3f3 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+
+/*Close icon of the popup, placed in the top right corner*/
+.pop_close{
+  position:absolute;
+  top:0;
+  right:0;
+  margin-right:3;
+  cursor: pointer;
+  padding-right:5px;
+}
+
+.pop_close:after{
+  display: inline-block;
+  content: "\00d7"; /* This will render the 'X' */
+}
+
+.pop_ols_button{
+  background-color: rgba(76, 175, 80, 0);
+  border: 1px solid black;
+  color: black;
+  border-radius: 25px;
+  padding: 0px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin-top: 10px !important;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 80px;
+}
+
+.pop_ols_button:hover{
+    background-color: rgb(164, 190, 206);
+    cursor: pointer;
+}

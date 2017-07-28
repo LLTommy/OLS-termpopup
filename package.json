@@ -1,0 +1,54 @@
+{
+  "name": "ols-termpopup",
+  "description": "This widget displays a pop up window with information about an ontology term. The widget is powered by the ontology Lookup service",
+  "version": "0.0.1",
+  "homepage": "https://github.com/LLTommy/ols-termpopup",
+  "author": {
+    "name": "lltommy",
+    "email": "lltommy@felix-solution.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/LLTommy/ols-termpopup.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LLTommy/ols-termpopup/issues"
+  },
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "https://github.com/LLTommy/ols-termpopup/blob/master/LICENSE"
+    }
+  ],
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo 'Error: no test specified' && exit 1",
+    "build": "mkdirp build && browserify -r ./:ols-termpopup -o build/ols-termpopup.js",
+    "watch": "mkdirp build && watchify -r ./:ols-termpopup -o build/ols-termpopup.js",
+    "build-browser": "npm run build",
+    "install": "npm run build",
+    "uglify": "gulp uglify"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babelify": "^7.2.0",
+    "browserify": "6.x",
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.1",
+    "mkdirp": "^0.5.0",
+    "watchify": "^3.7.0"
+  },
+  "keywords": [
+    "ontology",
+    "info window",
+    "ontology pop up",
+    "ebi",
+    "biojs",
+    "ols",
+    "network",
+    "Ontology Lookup Service"
+  ]
+}
